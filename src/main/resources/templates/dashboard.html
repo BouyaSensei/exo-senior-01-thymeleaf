@@ -15,9 +15,9 @@
     </header>
     <main>
       <div>
-        <p th:text="#{welcome.user(${username})}">!</p>
+        <p th:text="#{welcome.user(${user.username})}">!</p>
       </div>
-      <div>
+      <div sec:authorise="hasRole('MEMBER')">
         <p>mon lien d'adminstration</p>
       </div>
     </main>
