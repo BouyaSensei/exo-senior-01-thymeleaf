@@ -15,7 +15,10 @@
     </header>
     <main>
       <div>
-        <p th:text="welcome.message(${username})"></p>
+        <p th:text="#{welcome.user(${username})}">!</p>
+      </div>
+      <div>
+        <p>mon lien d'adminstration</p>
       </div>
     </main>
   </body>
