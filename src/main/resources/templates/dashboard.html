@@ -9,5 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DashBoard</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>mon Dashboard</h1>
+    </header>
+    <main>
+      <div>
+        <p th:text="welcome.message(${username})"></p>
+      </div>
+    </main>
+  </body>
 </html>
