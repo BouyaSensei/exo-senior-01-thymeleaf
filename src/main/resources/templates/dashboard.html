@@ -24,6 +24,11 @@
         sec:authorize="isAnonymous()"
         th:text="${#authentication.authorities}"
       ></div>
+      <div
+        class="alert alert-danger"
+        th:if="${ErrorMessage}"
+        th:text="#{error.unauthorized}"
+      ></div>
     </main>
   </body>
 </html>

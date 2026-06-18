@@ -21,8 +21,19 @@ public class DashBoardController {
         User myUser = new User("Axel", "ROLE_ADMIN");
         List<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_ADMIN"));
         model.addAttribute("user", myUser);
+
         Authentication auth = new UsernamePasswordAuthenticationToken("Axel", null, authorities);
         SecurityContextHolder.getContext().setAuthentication(auth);
+        Boolean errorMessage = true;
+        model.addAttribute("ErrorMessage", errorMessage);
         return "dashboard";
+    }
+
+    @GetMapping("/dashboard:error")
+    public String dashboardError(Model model) {
+        Boolean errorMessage = true;
+        model.addAttribute("ErrorMessage", errorMessage);
+        return "dashboard";
+
     }
 }
