@@ -15,11 +15,15 @@
     </header>
     <main>
       <div>
-        <p th:text="#{welcome.user(${user.username})}">!</p>
+        <p th:text="#{welcome.user(${#authentication.name})}">!</p>
       </div>
-      <div sec:authorise="hasRole('MEMBER')">
+      <div sec:authorize="hasRole('MEM')">
         <p>mon lien d'adminstration</p>
       </div>
+      <div
+        sec:authorize="isAnonymous()"
+        th:text="${#authentication.authorities}"
+      ></div>
     </main>
   </body>
 </html>
